@@ -1,0 +1,118 @@
+/* Client Logos - Infinite Marquee */
+.client-logos {
+    padding: 60px 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    z-index: 5;
+}
+
+.client-logos__container {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.client-logos__label {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.client-logos__slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+}
+
+.client-logos__track {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 20px 0;
+    /* Will be animated via framer-motion */
+    will-change: transform;
+}
+
+.client-logos__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+}
+
+.client-logos__item:hover {
+    opacity: 0.9;
+}
+
+.client-logos__text {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-white);
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient Fades for Slider Edges */
+.client-logos__fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.client-logos__fade--left {
+    left: 0;
+    background: linear-gradient(to right, #050505, transparent);
+}
+
+.client-logos__fade--right {
+    right: 0;
+    background: linear-gradient(to left, #050505, transparent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .client-logos {
+        padding: 40px 0;
+    }
+
+    .client-logos__track {
+        gap: 60px;
+    }
+
+    .client-logos__text {
+        font-size: 1.6rem;
+    }
+
+    .client-logos__fade {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-logos__track {
+        gap: 40px;
+    }
+
+    .client-logos__text {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,12 @@
+/* Scroll Progress */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-burgundy);
+    transform-origin: 0%;
+    z-index: 9999;
+    box-shadow: 0 2px 10px var(--color-burgundy-glow);
+}

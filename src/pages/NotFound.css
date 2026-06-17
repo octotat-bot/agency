@@ -1,0 +1,198 @@
+/* 404 Page - Creative Design */
+.not-found {
+    min-height: 100vh;
+    background: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+/* Background */
+.not-found__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.not-found__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.not-found__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.not-found__orb--1 {
+    top: 20%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 41, 66, 0.2);
+}
+
+.not-found__orb--2 {
+    bottom: 20%;
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(139, 41, 66, 0.15);
+}
+
+/* Content */
+.not-found__content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+/* 404 Number */
+.not-found__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.not-found__digit {
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.not-found__digit--middle {
+    background: linear-gradient(135deg, var(--color-burgundy, #8b2942) 0%, #c45c7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Glitch Line */
+.not-found__glitch-line {
+    width: 100%;
+    max-width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-burgundy, #8b2942), transparent);
+    margin: 0 auto 40px;
+    border-radius: 2px;
+}
+
+/* Title */
+.not-found__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+/* Message */
+.not-found__message {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Actions */
+.not-found__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.not-found__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.not-found__btn--primary {
+    background: linear-gradient(135deg, var(--color-burgundy, #8b2942), #a3344f);
+    color: #fff;
+    border: none;
+}
+
+.not-found__btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(139, 41, 66, 0.4);
+}
+
+.not-found__btn--secondary {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.not-found__btn--secondary:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Floating Particles */
+.not-found__floating {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.not-found__particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--color-burgundy, #8b2942);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .not-found {
+        padding: 60px 20px;
+    }
+
+    .not-found__number {
+        gap: 5px;
+    }
+
+    .not-found__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .not-found__btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}

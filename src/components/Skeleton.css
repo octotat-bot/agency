@@ -1,0 +1,118 @@
+/* Skeleton Loaders */
+.skeleton {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 4px;
+}
+
+.skeleton--no-animation {
+    animation: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Skeleton Lines */
+.skeleton-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Skeleton Card */
+.skeleton-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.skeleton-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Skeleton Service Card */
+.skeleton-service-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skeleton-service-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skeleton-service-card__tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* Skeleton Testimonial */
+.skeleton-testimonial {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skeleton-testimonial__author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.skeleton-testimonial__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Skeleton Project */
+.skeleton-project {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skeleton-project__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Skeleton Pricing */
+.skeleton-pricing {
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

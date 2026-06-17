@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Disallow dev files
+Disallow: /*.json$
+Disallow: /*.jsx$

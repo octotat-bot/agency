@@ -1,0 +1,631 @@
+/* Global Styles - WEN LAUNCH Dark Minimalist Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import './responsive.css';
+
+/* ========================================
+   CSS Variables
+======================================== */
+:root {
+  /* Colors - Dark Theme */
+  --color-black: #0a0a0a;
+  --color-black-light: #0f0f0f;
+  --color-black-lighter: #141414;
+  --color-white: #ffffff;
+  --color-white-muted: #e5e5e5;
+  --color-gray: #888888;
+  --color-gray-light: #aaaaaa;
+  --color-gray-dark: #555555;
+  --color-gray-darker: #333333;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Fonts */
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  /* Spacing */
+  --section-padding: clamp(80px, 12vw, 140px);
+  --container-padding: clamp(20px, 5vw, 80px);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-smooth: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   Reset & Base
+======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-white);
+  background: var(--color-black);
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-darker);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-dark);
+}
+
+/* ========================================
+   Typography
+======================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-md {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.heading-sm {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+/* ========================================
+   Accessibility - Focus States
+======================================== */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(139, 41, 66, 0.8);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip Link for Keyboard Users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  color: var(--color-black);
+  padding: 12px 24px;
+  z-index: 10000;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   Layout
+======================================== */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+/* ========================================
+   Utility Classes
+======================================== */
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+}
+
+.text-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.btn-lg {
+  padding: 20px 45px;
+  font-size: 1rem;
+}
+
+/* ========================================
+   Cards
+======================================== */
+.card {
+  background: var(--color-black-lighter);
+  border: 1px solid var(--color-border);
+  padding: 40px;
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-5px);
+}
+
+/* ========================================
+   Form Elements
+======================================== */
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* ========================================
+   Animations
+======================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   Global Modifiers
+======================================== */
+.no-scroll {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ========================================
+   Media Queries
+======================================== */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px;
+    --container-padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 60px;
+    --container-padding: 20px;
+  }
+}
+
+/* ========================================
+   Smooth Page Transitions
+======================================== */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ========================================
+   Page Transition Overlays
+======================================== */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  transform-origin: top;
+}
+
+.page-transition--slide {
+  background: var(--color-burgundy, #8b2942);
+}
+
+.page-transition--slide-secondary {
+  background: var(--color-black);
+}
+
+/* ========================================
+   Noise / Grain Overlay
+======================================== */
+.noise-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+@keyframes grainShift {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-2%, -2%);
+  }
+
+  20% {
+    transform: translate(2%, 2%);
+  }
+
+  30% {
+    transform: translate(-1%, 1%);
+  }
+
+  40% {
+    transform: translate(1%, -1%);
+  }
+
+  50% {
+    transform: translate(-2%, 2%);
+  }
+
+  60% {
+    transform: translate(2%, -2%);
+  }
+
+  70% {
+    transform: translate(0, 1%);
+  }
+
+  80% {
+    transform: translate(-1%, 0);
+  }
+
+  90% {
+    transform: translate(1%, 1%);
+  }
+}
+
+/* ========================================
+   Skeleton Loaders
+======================================== */
+.skeleton {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.skeleton--text {
+  height: 1em;
+  width: 100%;
+}
+
+.skeleton--title {
+  height: 2em;
+  width: 60%;
+}
+
+.skeleton--image {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.skeleton--avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.skeleton--card {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ========================================
+   Scroll Progress Enhancements
+======================================== */
+.scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-gray);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 100;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator__line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-gray), transparent);
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* ========================================
+   Sound Toggle Button
+======================================== */
+.sound-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-gray);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sound-toggle:hover {
+  background: rgba(139, 41, 66, 0.2);
+  border-color: rgba(139, 41, 66, 0.5);
+  color: var(--color-white);
+}
+
+.sound-toggle--active {
+  background: rgba(139, 41, 66, 0.3);
+  border-color: rgba(139, 41, 66, 0.6);
+  color: var(--color-white);
+}
+
+/* ========================================
+   Parallax Layers
+======================================== */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.parallax-layer--slow {
+  will-change: transform;
+}
+
+.parallax-layer--fast {
+  will-change: transform;
+}

@@ -1,0 +1,380 @@
+/* Pricing Section - Premium Redesign */
+.pricing {
+    background: var(--color-black);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background */
+.pricing__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.pricing__grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+.pricing__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 41, 66, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+}
+
+/* Header */
+.pricing__header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pricing__title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin-top: 15px;
+    line-height: 1.2;
+}
+
+.pricing__title .text-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.pricing__subtitle {
+    margin-top: 20px;
+    color: var(--color-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cards */
+.pricing__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.pricing__card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.6), rgba(15, 15, 15, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.pricing__card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing__card--popular {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(15, 15, 15, 0.95));
+    border-color: rgba(139, 41, 66, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 41, 66, 0.1);
+    z-index: 1;
+}
+
+.pricing__card--popular:hover {
+    border-color: rgba(139, 41, 66, 0.6);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 50px rgba(139, 41, 66, 0.15);
+}
+
+.pricing__badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-burgundy, #8b2942);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px rgba(139, 41, 66, 0.3);
+}
+
+.pricing__card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing__plan-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-white);
+}
+
+.pricing__plan-desc {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    line-height: 1.5;
+}
+
+/* Price */
+.pricing__price {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pricing__currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+    margin-right: 2px;
+    color: var(--color-gray);
+}
+
+.pricing__amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1;
+}
+
+.pricing__period {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: var(--color-gray);
+}
+
+/* Features */
+.pricing__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pricing__feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.pricing__feature svg {
+    flex-shrink: 0;
+    color: var(--color-burgundy, #8b2942);
+}
+
+.pricing__feature--disabled {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: line-through;
+}
+
+.pricing__feature--disabled svg {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* CTA */
+.pricing__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--color-white);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pricing__cta:hover {
+    border-color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing__cta--primary {
+    background: var(--color-burgundy, #8b2942);
+    border-color: #8b2942;
+}
+
+.pricing__cta--primary:hover {
+    background: #6b1c32;
+    border-color: #6b1c32;
+    box-shadow: 0 10px 30px rgba(139, 41, 66, 0.3);
+}
+
+/* Add-ons */
+.pricing__addons {
+    margin-bottom: 60px;
+}
+
+.pricing__addons-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--color-white);
+}
+
+.pricing__addons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing__addon {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.pricing__addon:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing__addon-name {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    margin-bottom: 8px;
+}
+
+.pricing__addon-price {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+/* Custom Quote */
+.pricing__custom {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.pricing__custom h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-white);
+}
+
+.pricing__custom p {
+    color: var(--color-gray);
+    max-width: 500px;
+}
+
+.pricing__custom-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--color-white);
+    color: var(--color-black);
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.pricing__custom-btn:hover {
+    background: #e0e0e0;
+    transform: translateX(5px);
+}
+
+/* Trust Indicators */
+.pricing__trust {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.pricing__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+.pricing__trust-item svg {
+    color: var(--color-burgundy, #8b2942);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .pricing__cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pricing__card:last-child {
+        grid-column: span 2;
+    }
+
+    .pricing__addons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing__card:last-child {
+        grid-column: span 1;
+    }
+
+    .pricing__custom {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .pricing__trust {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+}

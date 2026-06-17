@@ -1,0 +1,136 @@
+/* Page Transitions - Smooth curtain effects */
+.page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    pointer-events: none;
+    transform-origin: top;
+}
+
+.page-transition--slide {
+    background: linear-gradient(135deg, var(--color-burgundy, #8b2942), #6b1c32);
+}
+
+.page-transition--slide-secondary {
+    background: var(--color-black);
+}
+
+/* Page enter/exit animations */
+.page-content {
+    will-change: opacity, transform;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent content jump during transitions */
+.transitioning {
+    overflow: hidden;
+}
+
+/* Page fade variants */
+.page-fade-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-fade-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Slide up variants */
+.page-slide-enter {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.page-slide-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-slide-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-slide-exit-active {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Scale variants */
+.page-scale-enter {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.page-scale-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-scale-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.page-scale-exit-active {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Content stagger animation */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.stagger-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.stagger-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.stagger-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.stagger-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.stagger-item:nth-child(6) {
+    transition-delay: 0.6s;
+}
